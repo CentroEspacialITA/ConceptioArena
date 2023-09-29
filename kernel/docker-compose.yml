@@ -17,3 +17,9 @@ services:
       timeout: 10s
       retries: 5
       start_period: 10s
+
+  mqttx-web:
+    image: emqx/mqttx-web
+    ports:
+      - 80:80 
+    container_name: mqttx-web
