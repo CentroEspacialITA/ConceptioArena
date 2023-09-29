@@ -1,1 +1,3 @@
 *.log
+emqx_volume/data/**
+*.dump

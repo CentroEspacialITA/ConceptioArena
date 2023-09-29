@@ -1,25 +1,35 @@
 services:
   mqtt-broker:
-    image: eclipse-mosquitto
-    container_name: mqtt-broker
-    volumes:
-      - ../mosquitto/config:/mosquitto/config
-      - ../mosquitto/data:/mosquitto/data
-      - ../mosquitto/log:/mosquitto/log
+    image: emqx:latest
+    container_name: emqx
+    env_file:
+      - ../.env
+    volumes: 
+      - ../emqx_volume/data:/opt/emqx/data
+      - ../emqx_volume/etc:/opt/emqx/etc
+      - ../emqx_volume/log:/opt/emqx/log
+
     ports:
       - 1883:1883
-      - 8883:8883
-      - 9001:9001
-    
-    healthcheck:
-      test: ["CMD", "curl", "-f", "-X", "UPGRADE",  "http://localhost:8080"]
-      interval: 50s
-      timeout: 10s
-      retries: 5
-      start_period: 10s
+      - 8083:8083
+      - 18083:18083
+      
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "-X", "UPGRADE",  "http://localhost:8080"]
+    #   interval: 50s
+    #   timeout: 10s
+    #   retries: 5
+    #   start_period: 10s
+      
+    networks:
+      - backend
 
   mqttx-web:
     image: emqx/mqttx-web
     ports:
       - 80:80 
     container_name: mqttx-web
+
+networks:
+  backend:
+    driver: bridge
