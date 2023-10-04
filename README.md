@@ -2,7 +2,7 @@
 #### A multi-domain virtual arena that empowers Air Domain Study projects
 
 ## Overview
-conceptio_arena is a virtual environment for the Virtual Demonstrator project. It consists of a world visualization tool (VR-Forces), a data bus (ROS2 + MQTT broker) and a MBSE-capable tool (Capella).
+conceptio_arena is a virtual environment for the Virtual Demonstrator project. It consists of a world visualization and simulation tool (VR-Forces), a data bus (ROS2 + MQTT broker) and a MBSE-capable tool (Capella).
 
 ## Joining the arena
 ### MQTT entities
@@ -54,7 +54,7 @@ Examples:
 
 For the ```arena``` prefix, there is only one subtopic: ```entities```, where information about connected entities is shared. This is the topic that remote ROS2 entities need to subscribe, as for every new entity new subscriptions need to be set up using the mqtt_client services. 
 
-The MQTT topic structure follows that of the ROS2, thanks to the mqtt_mirror node from the conceptio_bridges package that replicates known topics and serializes them into ROS2 topics and messages.
+The MQTT topic structure follows that of the ROS2 due to the mqtt_mirror node from the conceptio_bridges package, that replicates known topics and serializes them into ROS2 topics and messages.
 
 
 
