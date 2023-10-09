@@ -1,5 +1,5 @@
 services:
-  mqtt-broker:
+  mqtt_broker:
     image: emqx:latest
     container_name: emqx
     env_file:
@@ -24,11 +24,24 @@ services:
     networks:
       - backend
 
-  mqttx-web:
+  mqttx_web:
     image: emqx/mqttx-web
     ports:
       - 80:80 
-    container_name: mqttx-web
+    container_name: mqttx_web
+
+  conceptio_bridges:
+    image: ghcr.io/conceptiolab/conceptio_bridges:main
+    ports:
+      - 9090:9090
+      - 9091:9091
+    container_name: conceptio_bridges
+    env_file:
+      - ../.env
+    networks:
+      - backend
+    links:
+      - mqtt_broker:emqx
 
 networks:
   backend:
