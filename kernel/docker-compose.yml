@@ -33,8 +33,17 @@ services:
       - ../.env
     networks:
       - backend
-    links:
-      - mqtt_broker:emqx
+    depends_on:
+      mqtt_broker:
+        condition: service_healthy
+
+  conceptio_core:
+    image: ghcr.io/conceptiolab/conceptio_core:main
+    container_name: conceptio_core
+    env_file:
+      - ../.env
+    networks:
+      - backend
     depends_on:
       mqtt_broker:
         condition: service_healthy
