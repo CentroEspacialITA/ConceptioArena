@@ -1,4 +1,7 @@
 # conceptio_arena
+![MainBranchConceptioBridges](https://github.com/ConceptioLab/conceptio_bridges/actions/workflows/docker-image.yml/badge.svg?branch=main)
+![MainBranchConceptioCore](https://github.com/ConceptioLab/conceptio_core/actions/workflows/docker-image.yml/badge.svg?branch=main)
+
 #### A multi-domain virtual arena that empowers Air Domain Study projects
 
 ## Overview
