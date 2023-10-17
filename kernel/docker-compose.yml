@@ -23,12 +23,6 @@ services:
     networks:
       - backend
 
-  mqttx_web:
-    image: emqx/mqttx-web
-    ports:
-      - 80:80 
-    container_name: mqttx_web
-
   conceptio_bridges:
     image: ghcr.io/conceptiolab/conceptio_bridges:main
     ports:

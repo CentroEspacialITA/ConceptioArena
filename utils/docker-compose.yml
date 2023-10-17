@@ -1,0 +1,27 @@
+services:
+  mqttx_web:
+    image: emqx/mqttx-web
+    ports:
+      - 80:80 
+    container_name: mqttx_web
+    networks:
+      - frontend
+      - backend
+  mqtt_explorer:
+    image: smeagolworms4/mqtt-explorer
+    ports:
+      - 4000:4000
+    container_name: mqtt_explorer
+    env_file:
+      - ../.env
+    volumes:
+      - ../mqtt-explorer/config:/mqtt-explorer/config
+    networks:
+      - frontend
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
