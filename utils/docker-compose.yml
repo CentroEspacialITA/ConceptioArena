@@ -22,6 +22,8 @@ services:
 
 networks:
   backend:
+    name: backend
     external: true
   frontend:
+    name: frontend
     driver: bridge
