@@ -24,4 +24,4 @@ networks:
   backend:
     external: true
   frontend:
-    external: true
+    driver: bridge
