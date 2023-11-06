@@ -25,7 +25,7 @@ services:
 
   conceptio_bridges:
     image: ghcr.io/conceptiolab/conceptio_bridges:main
-    container_name: conceptio_bridges
+    container_name: conceptio-bridges
     env_file:
       - ../.env
     networks:
@@ -36,7 +36,7 @@ services:
 
   conceptio_core:
     image: ghcr.io/conceptiolab/conceptio_core:main
-    container_name: conceptio_core
+    container_name: conceptio-core
     env_file:
       - ../.env
     networks:
@@ -47,12 +47,12 @@ services:
 
   discovery_server:
     image: ghcr.io/conceptiolab/discovery_server:main
-    container_name: fastdds_discovery_server
-    env_file:
-      - ../.env
+    container_name: fastdds-discovery-server
     networks:
       - backend
-      
+    ports:
+      - 11811:11811
+
 networks:
   backend:
     name: backend

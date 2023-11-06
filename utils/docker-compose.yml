@@ -3,7 +3,7 @@ services:
     image: emqx/mqttx-web
     ports:
       - 80:80 
-    container_name: mqttx_web
+    container_name: mqttx-web
     networks:
       - frontend
       - backend
@@ -11,7 +11,7 @@ services:
     image: smeagolworms4/mqtt-explorer
     ports:
       - 4000:4000
-    container_name: mqtt_explorer
+    container_name: mqtt-explorer
     env_file:
       - ../.env
     volumes:
