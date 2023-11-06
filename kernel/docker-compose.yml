@@ -45,6 +45,14 @@ services:
       mqtt_broker:
         condition: service_healthy
 
+  discovery_server:
+    image: ghcr.io/conceptiolab/discovery_server:main
+    container_name: fastdds_discovery_server
+    env_file:
+      - ../.env
+    networks:
+      - backend
+      
 networks:
   backend:
     name: backend
