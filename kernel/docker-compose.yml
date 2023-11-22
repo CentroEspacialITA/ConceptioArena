@@ -45,13 +45,6 @@ services:
       mqtt_broker:
         condition: service_healthy
 
-  discovery_server:
-    image: ghcr.io/conceptiolab/discovery_server:main
-    container_name: fastdds-discovery-server
-    networks:
-      - backend
-    ports:
-      - 11811:11811
 
 networks:
   backend:

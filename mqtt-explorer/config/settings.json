@@ -5,7 +5,7 @@
       "certValidation": true,
       "clientId": "mqtt-explorer-20ee0691",
       "id": "mqtt.eclipse.org",
-      "name": "mqtt.eclipse.org",
+      "name": "ARENA",
       "encryption": false,
       "subscriptions": [
         {
@@ -18,7 +18,7 @@
         }
       ],
       "type": "mqtt",
-      "host": "mqtt.eclipse.org",
+      "host": "161.24.30.92",
       "port": 1883,
       "protocol": "mqtt"
     },
@@ -43,6 +43,44 @@
       "host": "test.mosquitto.org",
       "port": 1883,
       "protocol": "mqtt"
+    },
+    "335d502f-d002-44e1-a504-7dfce5346bd6": {
+      "configVersion": 1,
+      "certValidation": false,
+      "clientId": "mqtt-explorer-45c19a93",
+      "id": "335d502f-d002-44e1-a504-7dfce5346bd6",
+      "name": "Conceptio",
+      "encryption": false,
+      "subscriptions": [
+        {
+          "topic": "#",
+          "qos": 0
+        },
+        {
+          "topic": "$SYS/#",
+          "qos": 0
+        },
+        {
+          "topic": "/#",
+          "qos": 0
+        },
+        {
+          "topic": "#/",
+          "qos": 0
+        }
+      ],
+      "type": "mqtt",
+      "host": "161.24.30.91",
+      "port": 1883,
+      "protocol": "mqtt"
     }
+  },
+  "Settings": {
+    "timeLocale": "pt-BR",
+    "topicOrder": "none",
+    "highlightTopicUpdates": true,
+    "valueRendererDisplayMode": "diff",
+    "selectTopicWithMouseOver": false,
+    "theme": "dark"
   }
 }
